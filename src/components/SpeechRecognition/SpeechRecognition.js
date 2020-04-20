@@ -3,9 +3,11 @@ import { GoogleSpeechRecognition } from "google-cloud-speech-webaudio";
 import "./SpeechRecognition.css";
 // require("dotenv").config();
 
-const GOOGLE_API_KEY = "AIzaSyAU5U9DOgRmiDtNiNcAX3A6eDwZbdnXhvc";
+const GOOGLE_API_KEY = "";
 
 const speechRecognition = new GoogleSpeechRecognition(GOOGLE_API_KEY);
+
+var sentence = [];
 
 class SpeechRecognition extends Component {
   constructor(props) {
@@ -18,21 +20,23 @@ class SpeechRecognition extends Component {
 
 
   componentDidMount() {
-    speechRecognition.stopListening();
+    // speechRecognition.stopListening();
   }
   componentDidUpdate() {
   }
 
 
   startListening = () => {
-    const start = speechRecognition.startListening();
-    console.log(start);
+    speechRecognition.startListening();
+    // const start = speechRecognition.startListening();
+    // console.log(start);
   };
 
   stopListening = () => {
     const result = speechRecognition.stopListening();
     console.log(result)
-    // console.log(Promise)
+    sentence.push(result)
+    console.log(sentence)
   };
 
   render() {
