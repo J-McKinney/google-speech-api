@@ -3,11 +3,11 @@ import { GoogleSpeechRecognition } from "google-cloud-speech-webaudio";
 import "./SpeechRecognition.css";
 // require("dotenv").config();
 
-const GOOGLE_API_KEY = "";
+const GOOGLE_API_KEY = "AIzaSyAU5U9DOgRmiDtNiNcAX3A6eDwZbdnXhvc";
 
 const speechRecognition = new GoogleSpeechRecognition(GOOGLE_API_KEY);
 
-var sentence = [];
+// var sentence = [];
 
 class SpeechRecognition extends Component {
   constructor(props) {
@@ -35,8 +35,8 @@ class SpeechRecognition extends Component {
   stopListening = () => {
     const result = speechRecognition.stopListening();
     console.log(result)
-    sentence.push(result)
-    console.log(sentence)
+    // sentence.push(result)
+    // return result
   };
 
   render() {
