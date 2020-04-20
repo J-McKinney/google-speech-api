@@ -3,7 +3,7 @@ import { GoogleSpeechRecognition } from "google-cloud-speech-webaudio";
 import "./SpeechRecognition.css";
 // require("dotenv").config();
 
-const GOOGLE_API_KEY = "AIzaSyAU5U9DOgRmiDtNiNcAX3A6eDwZbdnXhvc";
+const GOOGLE_API_KEY = "";
 
 const speechRecognition = new GoogleSpeechRecognition(GOOGLE_API_KEY);
 
